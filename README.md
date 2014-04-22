@@ -1,4 +1,4 @@
 pearson
 =======
 
-Demo : http://www.deepak2510.github.io/pearson/bin
+Demo : http://deepak2510.github.io/pearson/bin
