@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="pearsonApp" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/ngbp-0.3.2.css" />
+
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="src/app/app.js"></script>
+    <script type="text/javascript" src="src/app/books/book/book.js"></script>
+    <script type="text/javascript" src="src/app/books/books.js"></script>
+    <script type="text/javascript" src="src/app/cart/cart.js"></script>
+    <script type="text/javascript" src="src/common/alerts/alertService.js"></script>
+    <script type="text/javascript" src="templates-common.js"></script>
+    <script type="text/javascript" src="templates-app.js"></script>
+
+    <!-- it's stupid to have to load it here, but this is for the +1 button -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      { "parsetags": "explicit" }
+    </script>
+  </head>
+  <body>
+   <nav class="navbar navbarPearson" role="navigation">
+ 
+    <!-- Brand and toggle get grouped for better mobile display -->
+  
+  
+      <a class="navbar-brand" href="#">Pearson</a>
+
+      <ul class="nav navbar-nav navbar-right">
+       
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">   {{totalItems}} items <span class="glyphicon glyphicon-shopping-cart shoppingCartIcon"></span>Cart <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#/cart">View Cart</a></li>
+            <li><a href="#">Checkout</a></li>
+      
+          </ul>
+        </li>
+      </ul>
+
+
+</nav>
+<div class="pageTitle h2 container">{{pageTitle}}</div>
+
+    <div class="pContainer" ui-view="main"></div>
+
+    
+  </body>
+</html>

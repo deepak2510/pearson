@@ -1,0 +1,60 @@
+<div>
+    
+<div ng-click="bookClick($event)" class="bookContainer">
+    
+    <div class="bookTile">
+        
+        <div class="bookTitle">
+            {{book.bookTitle}}
+        </div>
+        <div class="bookImage">
+            
+            
+        </div>
+        
+        <div class="bookDetails">
+            <div class="author"><b>By : {{book.author}}</b></div>
+            <div class="year">2011</div>
+            <div class="pages">489 pages</div>
+            
+            
+        </div>
+        
+        <div class="purchaseDetails">
+            
+            
+            <div class="price">
+                ${{book.price}}         
+            </div>
+            
+            <div ng-if="!book.bought" class="buyLink">
+                
+                <a href="#" ng-click="addToCart($event)">add to cart</a>
+                
+            </div>
+            
+            <div ng-if="book.bought" class="removeLink">
+                
+                <a href="#" ng-click="removeFromCart($event)">remove from cart</a>
+                
+            </div>
+            
+        </div>
+        
+        <div class="hrLine"></div>
+        
+        <div class="bookDescription">
+            
+           {{book.description}}
+            
+        </div>
+        
+        
+        
+    </div>
+    
+
+    
+</div>
+
+</div>

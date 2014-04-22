@@ -1,0 +1,47 @@
+<div class="container h3" ng-if="!cartBooks.length"><p>No books bought yet !</p>
+<a href="#home">Click here to go to the store</a>
+</div>
+<div ng-if="cartBooks.length" class="container table-responsive">
+<table class="table">
+
+    <tr class="tableHead">
+        <th class="col-sm-8">Item</th>
+        <th class="col-sm-3">Qty</th>
+        <th class="col-sm-1">Price</th>
+    </tr>
+    <tr ng-repeat = "book in cartBooks">
+        <td><b>{{book.bookTitle}}</b><br/>by : {{book.author}} <a href="#" ng-click="removeFromCart(book,$event)">(remove)</a></td>
+        <td>
+        <select ng-change="updateQ()" ng-model="cartBooks[$index].qty" ng-options = "q for q in [1,2,3,4,5]">
+            
+            </select>
+        </td>
+        <td>${{book.price}}</td>
+    </tr>
+
+</table>
+
+
+<table class="extraInfo col-sm-12">
+    
+    <tr>
+    <td class="col-sm-11">tax :</td>
+    <td class="value col-sm-1">${{cartTax}}</td>
+    </tr> 
+    
+    <tr>
+    <td class="col-sm-11">shipping :</td>
+    <td class="value col-sm-1">${{cartShipping}}</td>
+    </tr> 
+    
+    <tr>
+    <td class="col-sm-11"><b>total :</b></td>
+    <td class="value col-sm-1"><b>${{cartTotal}}</b></td>
+    </tr> 
+</table>
+<div class="cartButtonContainer">
+<button class="btn btn-default cartButtons" ng-click="clearCart()">Clear Cart</button>
+<button class="btn btn-primary cartButtons">Checkout</button>
+    </div>
+</div>
+

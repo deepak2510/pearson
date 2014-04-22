@@ -1,0 +1,22 @@
+<div class="mainContainer">
+<div class="alertContainer">
+<div alert class="alert" ng-mouseenter="dontCloseAlert(bookAlerts[$index])" close="closeAlert($index)" ng-repeat = "alert in bookAlerts.slice().reverse()"> 
+   
+     {{alert.book.bookTitle}} has been added to your cart.
+    
+    <br/>
+    <a href="#" ng-click="removeFromCart($event, alert.book)">Remove from Cart</a>
+    <br/>
+    <a href="#/cart">Modify Quantity</a>
+ </div>
+    </div>
+    
+<div class="bookColContainer" ng-repeat="colContainer in bookColContainers">
+<div class="bookContainer" ng-repeat = "book in books | bookFilter : colContainer:bookColContainers.length">
+    
+    <div pbook></div>
+    
+    </div>
+</div>
+    
+    </div>

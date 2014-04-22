@@ -1,0 +1,47 @@
+<div class="modal-header h4">
+
+    {{book.bookTitle}}
+    <div class="close" aria-hidden="true" ng-click="$close(result)">x</div>
+</div>
+
+<div class="modal-body">
+
+       <div class="bookImageContainer">
+        <div class="bookImage">
+            
+            
+        </div>
+        </div>
+        <div class="bookDetails">
+            <div class="author"><b>By : {{book.author}}</b></div>
+            <div class="year">2011</div>
+            <div class="pages">489 pages</div>
+            
+        <div class="purchaseDetails">
+            
+            
+            <div class="price">
+                     ${{book.price}}         
+            </div>
+            
+
+        </div>
+        
+     <div class="bookDescription">
+            
+         {{book.description}}
+            
+        </div>
+        
+             
+        </div>
+        
+    </div>
+    
+
+
+<div class="modal-footer">
+<button class="btn btn-default cancelButton" ng-click="$close(result)">Cancel</button>
+<button ng-if="!book.bought" class="btn btn-primary cartButton" ng-click="addToCart($event)">Add to Cart</button>
+<button ng-if="book.bought" class="btn btn-primary cartButton" ng-click="removeFromCart($event)">Remove from Cart</button>
+</div>
